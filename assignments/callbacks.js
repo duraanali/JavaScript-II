@@ -4,23 +4,23 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 
-  //Given this problem: 
-  
-  function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
-  }
+//Given this problem: 
 
-  // Potential Solution:
+function firstItem(arr, cb) {
+  // firstItem passes the first item of the given array to the callback function.
+}
 
-  // Higher order function using "cb" as the call back
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
+// Potential Solution:
 
-  // Function invocation 
-  firstItem(items, function(first) {
-    console.log(first)
-  });
+// Higher order function using "cb" as the call back
+function firstItem(arr, cb) {
+  return cb(arr[0]);
+}
+
+// Function invocation 
+firstItem(items, function (first) {
+  console.log(first)
+});
 
 
 
@@ -31,7 +31,7 @@ function getLength(arr, cb) {
 
 }
 
-getLength(items, function(length) {
+getLength(items, function (length) {
   console.log(length);
 });
 
@@ -76,15 +76,21 @@ multiplyNums(5, 3, showMyAnswer);
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false. IndexOf
-  cb(item, list)
+  if (list.includes(item)) {
+    cb(true);
+  }else {
+    return cb(false);
+  }
 }
 
-const doesItContain = (found) => {
 
-  console.log(found)
+const includeItem = (itemtest) => {
+  console.log(itemtest)
 }
 
-contains(item, list, doesItContain);
+contains('Notebook', items, includeItem);
+
+
 
 //---------------------------------------------
 
